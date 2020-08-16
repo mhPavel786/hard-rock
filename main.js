@@ -27,7 +27,7 @@ function showData(data) {
     console.log(data);
     result.innerHTML = `
     <ul class="song-list">
-    ${data.data.map(song=> `<li>
+    ${data.data.slice(0,10).map(song => `<li>
                         <div class="single-result row align-items-center my-3 p-3">
                     <div class="col-md-9">
                         <h3 class="lyrics-name">${song.title}</h3>
