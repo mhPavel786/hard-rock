@@ -59,9 +59,18 @@ async function getLyrics(artist, songTitle) {
     const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');
     console.log(lyrics);
 
-     result.innerHTML =    ` <div class="single-lyrics text-center">
-                                 <h2 class="text-success mb-4"><strong>${songTitle}</strong><br>- ${artist}</h2>
-                                 <pre class="lyric text-white">${lyrics}</pre>
+    result.innerHTML =    ` <div class="d-flex justify-content-end">
+                            <button class="btn btn-success" id="reload" onclick="reload()"> Search New Song Lyrics </button>
+                            </div>
+                            <br>
+                            <div class="single-lyrics text-center">
+                                <h2 class="text-success mb-4"><strong>${songTitle}</strong><br>- ${artist}</h2>
+                                 <pre class="lyric text-white" id="textCopy"><span  id="textCopy">${lyrics}</span></pre>
                              </div>
                              `
 }
+
+            function reload() {
+            window.location.reload(true);
+        }
+        
